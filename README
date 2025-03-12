@@ -1,31 +1,40 @@
-This C++ program calculates and displays the average test scores and corresponding grades for a set of students. Here's a breakdown of how it works:
+This C++ program allows you to input students' names and their test scores, calculates their average score, assigns a grade based on that average, and then displays the results. Here's a detailed explanation of how it works:
 
-Input the number of students: The program asks for the number of students.
+Program Breakdown:
+Libraries Used:
 
-Enter student information: For each student:
-The program asks for the student's name.
-The program then asks for the student's test scores.
-The program prompts the user to input each test score (ensuring scores are between 0 and 100).
+#include <iostream>: For input and output operations.
+#include <string>: To work with strings.
+#include <vector>: To use dynamic arrays (vectors).
+#include <iomanip>: For formatting output (e.g., setting decimal precision).
 
-Calculations:
+Functions:
 
-It calculates the average score for each student using the calculateAverage() function.
-It then determines the grade based on the average score using the determineGrade() function. The grading scale is:
-A for 90 and above
-B for 80-89
-C for 70-79
-D for 60-69
-F for below 60
+calculateAverage(int scores[], int numScores): This function calculates the average score from an array of scores.
+It sums up all the scores and then divides by the number of scores to get the average.
 
-Display Results: Finally, the program displays the name, average score, and grade of each student in a formatted table.
+determineGrade(double avgScore): This function assigns a letter grade based on the average score:
 
-Key Functions:
+A for scores 90 and above
+B for scores between 80 and 89
+C for scores between 70 and 79
+D for scores between 60 and 69
+F for scores below 60
 
-calculateAverage(): Calculates the average score for each student.
-determineGrade(): Determines the grade based on the average score.
-displayResults(): Displays the results in a table format.
+displayResults(const vector<string>& names, const vector<double>& averages, const vector<char>& grades, int numStudents): This function displays the results in a formatted table:
 
-Code Structure:
-The program uses vectors to store the names, averages, and grades of students dynamically.
-It ensures input validation for test scores (between 0 and 100).
-The overall goal is to collect student data, compute averages and grades, and present the results in an organized way.
+The student's name
+The average score (with two decimal places)
+The grade assigned to the student.
+
+Main Logic:
+
+The user is prompted to enter the number of students.
+A dynamic array of vectors is created to store the names, averages, and grades for each student.
+
+For each student:
+Their name is entered.
+The number of test scores is entered.
+Each test score is validated (between 0 and 100).
+The average score and grade are calculated using the calculateAverage() and determineGrade() functions, respectively.
+After processing all the students, the displayResults() function is called to show the output.
