@@ -35,6 +35,7 @@ determineGrade(): Determines the grade based on the average score.
 displayResults(): Displays the results in a table format.
 
 Code Structure:
+
 The program uses vectors to store the names, averages, and grades of students dynamically.
 
 It ensures input validation for test scores (between 0 and 100).
